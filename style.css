@@ -32,8 +32,12 @@ ul{
     font-size: 16px;
 }
 
-button{
+button, img{
     cursor: pointer;
+}
+
+input{
+    border: none;
 }
 
 .container{
@@ -66,6 +70,23 @@ button{
     grid-template-columns:auto;
     grid-template-rows: 1fr 2fr;
     gap: 20px;
+
+    height: 100%;
+}
+
+.profile-pic-img-small{
+    justify-self: center;
+    object-fit: cover;
+    height: auto;
+    width: 43px;
+    border-radius: 50%;
+}
+
+.profile-pic-img-big{
+    object-fit: cover;
+    height: 100px;
+    width: auto;
+    border-radius: 50%;
 }
 
 .left-side-top{
@@ -85,8 +106,16 @@ button{
 }
 
 .left-side-top input{
+    height: 30px;
+    border-radius: 15px;
+    background-color: lightgray;
+
     grid-column: 2/ 3;
     grid-row: 1 /2;
+}
+
+.left-side-top input:focus{
+    border: 4px solid var(--dark-purple);
 }
 
 .left-side-bottom{
@@ -105,11 +134,16 @@ button{
     grid-row: 1 / 3;
 }
 
+.left-side-bottom .name{
+    grid-row: 1 / 3;
+}
+
 .right-side ul{
     display: grid;
     grid-template-columns:auto;
     grid-template-rows: 1fr 2fr;
     gap: 20px;
+    height: 100%;
 
     align-items: center;
     justify-content: center;
@@ -127,6 +161,11 @@ button{
     gap: 20px;
     grid-column: 1 / -1;
     grid-row: 1 /2;
+    place-content: center;
+}
+
+.right-side-top .bell-img{
+    justify-self: end;
 }
 
 .right-side-bottom{
@@ -162,6 +201,11 @@ button{
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 40px;
 }
 
 .side ul{
@@ -172,13 +216,19 @@ button{
 .side .main-links ul li{
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 5px;
+    gap: 20px;
+    place-content: center;
+}
+
+.side p{
+    font-size: clamp(17px, 50%, 60rem);
+    font-weight: bold;
 }
 
 .side .secondary-links ul li{
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 5px;
+    gap: 20px;
 }
 
 .main-content{
@@ -198,7 +248,7 @@ button{
     gap: 15px;
 }
 
-.project-container h4{
+.project-container h3{
     grid-column: 1 / -1;
     grid-row: 1 / -1;
 }
@@ -221,6 +271,7 @@ button{
     display: grid;
     grid-template-columns: auto auto auto;
     justify-self: end;
+    gap: 20px;
 }
 
 .announcement-trending-container{
@@ -269,10 +320,28 @@ button{
 
 .trending ul li{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    
+    
+    justify-items: center;
+    
+    
 }
 
 .trending ul li img{
+    display: grid;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.trending-img-icon{
+    border-radius: 50%;
+    width: 60px;
+    height: auto;
+}
+
+.name-project{
     grid-row: 1 / 3;
     align-self: center;
 }
